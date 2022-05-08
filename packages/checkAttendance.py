@@ -1,7 +1,7 @@
 import pyautogui, time, os, cv2, numpy as np, pyperclip as pc
 from PIL import ImageGrab
 
-def checkAttendance(studentnum):
+def checkAttendance():
     pyautogui.PAUSE = 0
     participants = []
     

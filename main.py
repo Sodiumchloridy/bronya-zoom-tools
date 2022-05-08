@@ -3,9 +3,7 @@ import time, os, sys
 # Lazy Imports
 # from pathlib import Path
 # from packages import checkAttendance, joinMeeting
-
-studentnum = 48
-
+1
 def welcome(selection=None):
     print("Welcome to Bronya's Automatic Zoom Tools")
     print("Enter 1 to Automatically Join Meetings")
@@ -25,10 +23,10 @@ def welcome(selection=None):
     elif selection == "2":
         from packages import checkAttendance
         print("Checking Attendance...")
-        checkAttendance.checkAttendance(studentnum)
+        checkAttendance.checkAttendance()
         print("Task complete.")
         if input("Do you wish to rerun the attendance check? (y/n): ") == "y":
-            checkAttendance.checkAttendance(studentnum)
+            checkAttendance.checkAttendance()
         else: 
             sys.exit()
     else:

@@ -1,20 +1,24 @@
 import pyautogui
 import subprocess
-import time
+import time, os
 import pandas as pd
-from datetime import timedelta
+from pathlib import Path
 from datetime import datetime
 
 def joinMeeting(meetingId, meetingPswd):
     pyautogui.PAUSE = 0
-    subprocess.Popen(r'C:\Users\DELL\AppData\Roaming\Zoom\bin\zoom.exe')
+
+    path = os.path.normpath(os.getcwd())
+    user = path.split(os.sep)[2]
+
+    subprocess.Popen(f'''C:\\Users\\{user}\\AppData\\Roaming\\Zoom\\bin\\zoom.exe''')
 
     joinBtn = ("assets\images\joinBtn.png")
     joinBtnPos = pyautogui.locateCenterOnScreen(joinBtn)
     print("Waiting for Zoom to load...")
     while joinBtnPos == None:
         joinBtnPos = pyautogui.locateCenterOnScreen(joinBtn)
-        time.sleep(3)
+        time.sleep(1)
     pyautogui.click(joinBtnPos)
 
     idTxtfield = ("assets\images\meetingId.png")
@@ -32,19 +36,19 @@ def joinMeeting(meetingId, meetingPswd):
 
     vidCheckboxLoc = pyautogui.locateCenterOnScreen(vidCheckbox)
     pyautogui.click(vidCheckboxLoc)
-    joinRoom = ("assets\images\joinRoom.png")
-    joinRoomLoc = pyautogui.locateCenterOnScreen(joinRoom)
+    joinRoom = "assets\images\joinRoom.png"
+    joinRoomLoc = pyautogui.locateCenterOnScreen(joinRoom, confidence = 0.7)
     pyautogui.click(joinRoomLoc)
 
     meetingPswdfieldLoc = pyautogui.locateCenterOnScreen("assets\images\meetingPswd.png", confidence=0.5)
-    print("Loading...")
+
     while meetingPswdfieldLoc == None:
         meetingPswdfieldLoc = pyautogui.locateCenterOnScreen("assets\images\meetingPswd.png", confidence = 0.5)
         time.sleep(1)
         
     pyautogui.click(meetingPswdfieldLoc)
     pyautogui.write(meetingPswd)
-    joinMeetingBtn = pyautogui.locateCenterOnScreen("assets\images\joinMeeting.png")
+    joinMeetingBtn = pyautogui.locateCenterOnScreen("assets\images\joinMeeting.png", confidence = 0.7)
     pyautogui.click(joinMeetingBtn)
 
 def autoJoin():
@@ -61,6 +65,7 @@ def autoJoin():
             row = df.loc[df[day] == modtime]
             meetingId = str(row.iloc[0,7])
             meetingPswd = str(row.iloc[0,8])
+            print("Joining Meeting...")
             joinMeeting(meetingId,meetingPswd)
             await_meeting = False
         except:
