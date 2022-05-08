@@ -1,5 +1,5 @@
 # Bronya's Zoom Tools
-![Logo](../assets/demo.gif?raw=true)
+![Logo](../assets/logo.png?raw=true)
 
 ##Functions
 1. Check participant's attendance
