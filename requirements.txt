@@ -1,0 +1,6 @@
+PyAutoGUI
+opencv-python
+numpy
+pyperclip
+pandas
+Pillow
