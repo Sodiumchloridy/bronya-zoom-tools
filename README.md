@@ -22,8 +22,8 @@ python main.py
 ## How to use
 1. Edit the files in ./assets/data folder
 
-	attendants.txt is for the attendance checking function
+	```attendants.txt``` is attendance checking
 
-	meetings.csv is for automatically joining meetings
+	```meetings.csv``` is for automatically joining meetings
 
 2. Run ```python main.py```
