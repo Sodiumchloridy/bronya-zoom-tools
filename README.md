@@ -17,5 +17,10 @@ pip install -r requirements.txt
 ```python
 python main.py
 ```
-
 4. Pray that it works
+
+## How to use
+Edit the files in ./assets/data folder
+	attendants.txt is for the attendance checking function
+	meetings.csv is for automatically joining meetings
+Run ```python main.py```
