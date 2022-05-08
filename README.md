@@ -1,13 +1,13 @@
 # Bronya's Zoom Tools
 ![Logo](../assets/logo.png?raw=true)
 
-##Functions
+## Functions
 1. Check participant's attendance
 2. Automatically Join Zoom Meeting
 
 Tested on 1980 x 1080 px screens only, other dimensions are currently unsupported.
 
-##Setup
+## Setup
 1. Install Python
 2. Install requirements
 ```bash
