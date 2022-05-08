@@ -6,7 +6,8 @@
 2. Automatically Join Zoom Meeting
 
 Tested on 1980 x 1080 px screens only, other dimensions are currently unsupported.
-! Remember to maximize Zoom window when using the check attendance function.
+
+**! Remember to maximize Zoom window when using the check attendance function.**
 
 ## Setup
 1. Install Python
