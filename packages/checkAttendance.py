@@ -37,7 +37,8 @@ def checkAttendance():
         im1 = ImageGrab.grab(bbox=checkboxpos)
         im1.save('im1.png')
         cvim1 = cv2.imread('im1.png',0)
-        pyautogui.press("backspace", presses=2)
+        pyautogui.hotkey('ctrl', 'a')
+        pyautogui.press("backspace")
         if np.array_equal(cvim1, blank):
             print(u + " is absent")
             os.remove('im1.png')
@@ -52,4 +53,4 @@ def checkAttendance():
     print("Absentees: " + str(participantsdupe))
     pc.copy(str(participantsdupe))
     print("Absentees are copied to clipboard.")
-    print("Ran in: " + time.perf_counter())
+    print("Ran in: " + str(time.perf_counter()))
