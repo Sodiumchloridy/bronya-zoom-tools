@@ -5,7 +5,7 @@
 1. Check participant's attendance
 2. Automatically Join Zoom Meeting
 
-Tested on 1980 x 1080 px screens only, other dimensions are currently unsupported.
+Tested on 1980 x 1080 px screens only, other dimensions are currently untested.
 
 **! Remember to maximize Zoom window when using the check attendance function.**
 
